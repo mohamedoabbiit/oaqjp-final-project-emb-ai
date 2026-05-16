@@ -1,8 +1,9 @@
 import requests
-import json
+# import json
+# from emotion_detection import emotion_detector
 
 
-def sentiment_analyzer(text_to_analyze):
+def emotion_detector(text_to_analyze):
 
     url = (
         "https://sn-watson-emotion.labs.skills.network"
@@ -21,36 +22,37 @@ def sentiment_analyzer(text_to_analyze):
     }
 
     response = requests.post(url, json=myobj, headers=header)
+    return response.text
 
-    if response.status_code == 200:
+    # if response.status_code == 200:
 
-        formatted_response = json.loads(response.text)
+    #     formatted_response = json.loads(response.text)
 
-        emotions = (
-            formatted_response['emotionPredictions'][0]['emotion']
-        )
+    #     emotions = (
+    #         formatted_response['emotionPredictions'][0]['emotion']
+    #     )
 
-        anger = emotions['anger']
-        disgust = emotions['disgust']
-        fear = emotions['fear']
-        joy = emotions['joy']
-        sadness = emotions['sadness']
+    #     anger = emotions['anger']
+    #     disgust = emotions['disgust']
+    #     fear = emotions['fear']
+    #     joy = emotions['joy']
+    #     sadness = emotions['sadness']
 
-        dominant_emotion = max(emotions, key=emotions.get)
+    #     dominant_emotion = max(emotions, key=emotions.get)
 
-    else:
-        anger = None
-        disgust = None
-        fear = None
-        joy = None
-        sadness = None
-        dominant_emotion = None
+    # else:
+    #     anger = None
+    #     disgust = None
+    #     fear = None
+    #     joy = None
+    #     sadness = None
+    #     dominant_emotion = None
 
-    return {
-        'anger': anger,
-        'disgust': disgust,
-        'fear': fear,
-        'joy': joy,
-        'sadness': sadness,
-        'dominant_emotion': dominant_emotion
-    }
+    # return {
+    #     'anger': anger,
+    #     'disgust': disgust,
+    #     'fear': fear,
+    #     'joy': joy,
+    #     'sadness': sadness,
+    #     'dominant_emotion': dominant_emotion
+    # }
