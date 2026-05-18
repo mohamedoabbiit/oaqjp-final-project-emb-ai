@@ -1,3 +1,6 @@
+import requests
+import json
+
 def emotion_detector(text_to_analyze):
 
     url = (
@@ -24,7 +27,7 @@ def emotion_detector(text_to_analyze):
             'fear': None,
             'joy': None,
             'sadness': None,
-            'dominant_emotion': None
+            'dominant_emotion': None,
         }
 
     formatted_response = json.loads(response.text)

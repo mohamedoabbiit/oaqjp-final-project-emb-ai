@@ -1,4 +1,1 @@
-theia@theiadocker-mohaoabbiit:/home/project/final_project$ pylint server.py
-
--------------------------------------------------------------------
-Your code has been rated at 10.00/10 (previous run: 9.09/10, +0.91)
+Your code has been rated at 10.00/10 (previous run: 6.15/10, +3.85)
